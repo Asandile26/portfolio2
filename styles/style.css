@@ -11,8 +11,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0%;
-    
-  } 
+    font-family: Arial, Helvetica, sans-serif;
+ }
   /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -115,6 +115,12 @@
   .timeline::after {
   display: none;
   }
+  .timeline .container::after{
+    opacity: 0;
+  }
+  .right, .left{
+    left: 0%;
+  }
 
   
   /* Full-width containers */
@@ -153,11 +159,26 @@ section {
   font-weight: bold;
   position: relative;
   animation: mymove 5s infinite;
+  width: 100%;
 }
 #section {animation-timing-function: linear;}
 @keyframes mymove {
-  from {left: 0px;}
-  to {left: 300px;}
+  from {left: 0%;}
+  to {left: 40%;}
+}
+.container-md, .py-5 {
+  width: fit-content;
+}
+@keyframes home-animation {
+  from {top: -200px;}
+  to {top: 0;}
+  
+}
+
+  
+
+.row {
+  width: fit-content;
 }
  img {
   border: 1px solid #ddd;
@@ -165,14 +186,7 @@ section {
   padding: 5px;
   width: 150px;
 }
-.card-group {
-  display: wrap;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
+
 .card-group{
   display: flex;
 }
@@ -182,11 +196,21 @@ section {
   }
   
 }
-/* footer {
-  background-color: wheat;
-  position: absolute;
-  width: 100vw;
-} */
+
+@media screen and (max-width: 500px) {
+  section{
+    position: relative;
+    animation-name: home-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+
+  }
+  
+}
+footer {
+ color: white;
+}
 h1, h2 {
   text-align: center;
 }
@@ -194,3 +218,16 @@ h1, h2 {
   width: 35rem;
   margin: auto;
 }
+.card #Reece-img {
+  height: 12rem;
+  object-fit: cover;
+  object-position: top;
+  background-position: center;
+}
+#about-p, #about-p1 {
+  color: white;
+}
+h1, h2 {
+  color: white;
+}
+
